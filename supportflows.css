@@ -1,0 +1,33 @@
+.anchor-placeholder-banner {
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 6px;
+  padding: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px 0px;
+}
+
+.anchor-placeholder-banner img {
+  float: left;
+  max-width: 50px;
+  margin-right: 20px;
+}
+
+.anchor-placeholder-banner h1 {
+  font-size: 22px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.anchor-placeholder-banner p {
+  font-size: 16px;
+}
+
+.anchor-placeholder-banner a {
+  float: right;
+  display: block;
+  border-radius: 25px;
+  padding: 14px 20px;
+  font-weight: 700;
+  background: #8940fa;
+  color: #fff;
+}
