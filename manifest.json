@@ -1,0 +1,23 @@
+{
+  "name": "Admin Modal Flexibility",
+  "version": "1.0",
+  "description": "Explore ability to add custom modal to HTML page",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "sf.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": [ "supportflows.css" ],
+      "js" : ["jquery-3.3.1.min.js", "contentscript.js"]
+    }
+  ]
+}
