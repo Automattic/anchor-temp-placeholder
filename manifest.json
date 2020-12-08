@@ -15,9 +15,9 @@
   ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches":  ["*://anchor.fm/*"],
       "css": [ "supportflows.css" ],
-      "js" : ["jquery-3.3.1.min.js", "contentscript.js"]
+      "js" : ["jquery-3.3.1.min.js"]
     }
   ]
 }
