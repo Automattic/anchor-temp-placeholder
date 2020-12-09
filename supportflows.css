@@ -22,7 +22,8 @@
   font-size: 16px;
 }
 
-.anchor-placeholder-banner a {
+.anchor-placeholder-banner a,
+.anchor-placeholder-controls .btn {
   float: right;
   display: block;
   border-radius: 25px;
@@ -30,4 +31,20 @@
   font-weight: 700;
   background: #8940fa;
   color: #fff;
+}
+
+.anchor-placeholder-controls .btn {
+  float: left;
+}
+
+.anchor-placeholder-controls .blog-post-link {
+  float: right;
+  font-size: 14px;
+  color: #888;
+  cursor: pointer;
+}
+
+.anchor-placeholder-controls .blog-post-link img {
+  display: inline-block;
+  width: 30px;
 }
