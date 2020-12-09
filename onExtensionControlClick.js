@@ -13,13 +13,15 @@ if (path === "/dashboard") {
 }
 
 function handleDashboard() {
+  var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&dev=true`;
   var container = $("#app-content > div > div > div");
   var bannerHtml = $("<div class='anchor-placeholder-banner'></div>");
+
   bannerHtml.append(
     '<img src="https://s.w.org/style/images/about/WordPress-logotype-simplified.png" />'
   );
   bannerHtml.append(
-    `<a class="btn" href="${SITE_ROOT}/new?anchor_podcast=${PODCAST_ID}" target="_blank" rel="noopener noreferrer">Get Started</a>`
+    `<a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Get Started</a>`
   );
   bannerHtml.append("<h1>Create a site &amp; transcribe episodes</h1>");
   bannerHtml.append(
@@ -34,15 +36,16 @@ function handleDashboard() {
 }
 
 function handleEpisodePage() {
+  var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&episode=${EPISODE_ID}&spotify_show_url=${encodeURIComponent(
+    SPOTIFY_URL
+  )}&dev=true`;
   var buttonRow = $(
     "#app-content > div > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)"
   );
   var tempControls = $('<div class="anchor-placeholder-controls"></div>');
   tempControls.append('<a href="#" class="btn">Share episode</a>');
   tempControls.append(
-    `<a href="${SITE_ROOT}/post?anchor_podcast=${PODCAST_ID}&anchor_episode=${EPISODE_ID}&spotify_show_url=${encodeURIComponent(
-      SPOTIFY_URL
-    )}" class="blog-post-link" target="_blank" rel="noopener noreferrer">Convert to blog post. <img src="https://s.w.org/style/images/about/WordPress-logotype-simplified.png" /></a>`
+    `<a href="${url}" class="blog-post-link" target="_blank" rel="noopener noreferrer">Convert to blog post. <img src="https://s.w.org/style/images/about/WordPress-logotype-simplified.png" /></a>`
   );
   if ($(".anchor-placeholder-controls").length) {
     buttonRow.show();
