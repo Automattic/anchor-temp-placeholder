@@ -1,6 +1,8 @@
 var SITE_ROOT = "http://calypso.localhost:3000";
 var PODCAST_ID = "3e51070";
 var EPISODE_ID = "e5f332f1-a347-40d9-a79b-ce30884057e5";
+var SPOTIFY_URL =
+  "https://open.spotify.com/show/6HTZdaDHjqXKDE4acYffoD?si=EVfDYETjQCu7pasVG5D73Q";
 var path = window.location.pathname;
 
 if (path.includes("/dashboard/episode/")) {
@@ -38,7 +40,9 @@ function handleEpisodePage() {
   var tempControls = $('<div class="anchor-placeholder-controls"></div>');
   tempControls.append('<a href="#" class="btn">Share episode</a>');
   tempControls.append(
-    '<a class="blog-post-link">Convert to blog post. <img src="https://s.w.org/style/images/about/WordPress-logotype-simplified.png" /></a>'
+    `<a href="${SITE_ROOT}/post?anchor_podcast=${PODCAST_ID}&anchor_episode=${EPISODE_ID}&spotify_show_url=${encodeURIComponent(
+      SPOTIFY_URL
+    )}" class="blog-post-link" target="_blank" rel="noopener noreferrer">Convert to blog post. <img src="https://s.w.org/style/images/about/WordPress-logotype-simplified.png" /></a>`
   );
   if ($(".anchor-placeholder-controls").length) {
     buttonRow.show();

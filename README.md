@@ -6,7 +6,7 @@ This extension provides temporary placeholder UI on http://anchor.fm to facilita
 - In Chrome, navigate to chrome://extensions
 - Toggle "Developer Mode" on if it is not already enabled.
 - Click "Load Unpacked" and select the container folder of the repository.
-- If desired, update the `SITE_ROOT`, `PODCAST_ID`, and `EPISODE_ID` values in `onExtensionControlClick.js`, then click the "Refresh" button on the extension page. (Use this "Refresh" button any time you make changes to the content of the extension.)
+- If desired, update the `SITE_ROOT`, `PODCAST_ID`, `EPISODE_ID`, and `SPOTIFY_URL` values in `onExtensionControlClick.js`, then click the "Refresh" button on the extension page. (Use this "Refresh" button any time you make changes to the content of the extension.)
 
 # To Use Extension
 
