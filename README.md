@@ -13,4 +13,9 @@ This extension provides temporary placeholder UI on http://anchor.fm to facilita
 
 - Navigate to http://anchor.fm and log into an account that has at least one episode created.
 - While on the dashboard, click the extension icon to toggle the "Create a site and transcribe episodes" banner.
+
+![dashboard behavior](https://cdn-std.droplr.net/files/acc_1037067/rKmG8R)
+
 - While on an episode page, click the extension icon to toggle the "Convert to blog post" link
+
+![episode behavior](https://cdn-std.droplr.net/files/acc_1037067/3WaN1k)
