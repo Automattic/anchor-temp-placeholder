@@ -3,10 +3,11 @@ This extension provides temporary placeholder UI on http://anchor.fm to facilita
 # To Install Extension
 
 - Check out this repository locally.
+- Create a file called `config.json` in the root of the extension folder and set key-value pairs for `PODCAST_ID`, `EPISODE_ID`, and `SPOTIFY_URL`. (A sample is provided in `config.sample.json`). The `config.json` file is not monitored by Git, so it will remain consistent if you make further pulls from the extension repository.
 - In Chrome, navigate to chrome://extensions
 - Toggle "Developer Mode" on if it is not already enabled.
 - Click "Load Unpacked" and select the container folder of the repository.
-- If desired, update the `SITE_ROOT`, `PODCAST_ID`, `EPISODE_ID`, and `SPOTIFY_URL` values in `onExtensionControlClick.js`, then click the "Refresh" button on the extension page. (Use this "Refresh" button any time you make changes to the content of the extension.)
+- If you need to make changes to the extension, you will have to click the "Refresh" button on the `chrome://extensions` page before they will be reflected in the browser.
 
 # To Use Extension
 

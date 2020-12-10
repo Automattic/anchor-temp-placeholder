@@ -1,18 +1,21 @@
-var SITE_ROOT = "http://calypso.localhost:3000";
-var PODCAST_ID = "3e51070";
-var EPISODE_ID = "e5f332f1-a347-40d9-a79b-ce30884057e5";
-var SPOTIFY_URL =
-  "https://open.spotify.com/show/6HTZdaDHjqXKDE4acYffoD?si=EVfDYETjQCu7pasVG5D73Q";
-var path = window.location.pathname;
+fetch(chrome.runtime.getURL("config.json")).then((response) => {
+  response.json().then((data) => {
+    run(data);
+  });
+});
 
-if (path.includes("/dashboard/episode/")) {
-  handleEpisodePage();
-}
-if (path === "/dashboard") {
-  handleDashboard();
+function run(config) {
+  var path = window.location.pathname;
+  if (path.includes("/dashboard/episode/")) {
+    handleEpisodePage(config);
+  }
+  if (path === "/dashboard") {
+    handleDashboard(config);
+  }
 }
 
-function handleDashboard() {
+function handleDashboard(config) {
+  const { PODCAST_ID } = config;
   var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&dev=true`;
   var container = $("#app-content > div > div > div");
   var bannerHtml = $("<div class='anchor-placeholder-banner'></div>");
@@ -35,7 +38,8 @@ function handleDashboard() {
   }
 }
 
-function handleEpisodePage() {
+function handleEpisodePage(config) {
+  const { PODCAST_ID, EPISODE_ID, SPOTIFY_URL } = config;
   var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&episode=${EPISODE_ID}&spotify_show_url=${encodeURIComponent(
     SPOTIFY_URL
   )}&dev=true`;

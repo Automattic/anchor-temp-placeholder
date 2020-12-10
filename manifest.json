@@ -13,6 +13,9 @@
   "permissions": [
     "activeTab"
   ],
+  "web_accessible_resources": [
+    "config.json"
+  ],
   "content_scripts": [
     {
       "matches":  ["*://anchor.fm/*"],
