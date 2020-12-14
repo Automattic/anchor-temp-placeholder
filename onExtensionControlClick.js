@@ -40,9 +40,10 @@ function handleDashboard(config) {
 
 function handleEpisodePage(config) {
   const { PODCAST_ID, EPISODE_ID, SPOTIFY_URL } = config;
-  var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&episode=${EPISODE_ID}&spotify_show_url=${encodeURIComponent(
-    SPOTIFY_URL
-  )}&dev=true`;
+  var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&episode=${EPISODE_ID}&dev=true`;
+  if (SPOTIFY_URL) {
+    url += `&spotify_show_url=${encodeURIComponent(SPOTIFY_URL)}`;
+  }
   var buttonRow = $(
     "#app-content > div > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)"
   );
