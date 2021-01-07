@@ -12,8 +12,8 @@ function run(config) {
   if (path === "/dashboard") {
     handleDashboard(config);
   }
-  if (path.includes("post.php")) {
-    handlePostPublish(config);
+  if (path.includes("post.php") || path.includes("/home")) {
+    handleOutgoingAnchorLinks(config);
   }
 }
 
@@ -65,11 +65,12 @@ function handleEpisodePage(config) {
 }
 
 /*
- * On post-publish page, modify all links with destination "https://anchor.fm/wordpress"
- * to be destination "https://website-wordpress.anchor.fm/wordpress". Also adds
- * " (anchor staging)" to the link text, to make it obvious a change has occured.
+ * On post-publish or calypso home page, modify all links with destination
+ * "https://anchor.fm/wordpress" to be destination
+ * "https://website-wordpress.anchor.fm/wordpress". Also adds " (anchor
+ * staging)" to the link text, to make it obvious a change has occured.
  */
-function handlePostPublish(_config) {
+function handleOutgoingAnchorLinks(_config) {
   let links = [].filter.call(
     document.getElementsByTagName("a"),
     (elem) => elem.href == "https://anchor.fm/wordpress"
