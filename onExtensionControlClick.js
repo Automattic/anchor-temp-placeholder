@@ -12,6 +12,9 @@ function run(config) {
   if (path === "/dashboard") {
     handleDashboard(config);
   }
+  if (path.includes("post.php")) {
+    handlePostPublish(config);
+  }
 }
 
 function handleDashboard(config) {
@@ -58,5 +61,21 @@ function handleEpisodePage(config) {
   } else {
     buttonRow.hide();
     buttonRow.after(tempControls);
+  }
+}
+
+/*
+ * On post-publish page, modify all links with destination "https://anchor.fm/wordpress"
+ * to be destination "https://website-wordpress.anchor.fm/wordpress". Also adds
+ * " (anchor staging)" to the link text, to make it obvious a change has occured.
+ */
+function handlePostPublish(_config) {
+  let links = [].filter.call(
+    document.getElementsByTagName("a"),
+    (elem) => elem.href == "https://anchor.fm/wordpress"
+  );
+  for (let link of links) {
+    link.href = "https://website-wordpress.anchor.fm/wordpress";
+    link.textContent += " (Anchor Staging)";
   }
 }
