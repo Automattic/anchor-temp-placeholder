@@ -1,6 +1,6 @@
 {
   "name": "Anchor.FM Placeholder Flows",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Click extension icon to insert HTML into anchor.fm matching expected flow entry points.",
   "manifest_version": 2,
   "browser_action": {
@@ -10,15 +10,14 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-  "permissions": [
-    "activeTab"
-  ],
+  "permissions": ["activeTab", "<all_urls>"],
   "web_accessible_resources": [
     "config.json"
   ],
   "content_scripts": [
     {
-      "matches":  ["*://anchor.fm/*", "*://website-wordpress.anchor.fm/*"],
+      "matches":  ["*://anchor.fm/*", "*://website-wordpress.anchor.fm/*", "*://*.wordpress.com/*"],
+      "all_frames": true,
       "css": [ "supportflows.css" ],
       "js" : ["jquery-3.3.1.min.js"]
     }
