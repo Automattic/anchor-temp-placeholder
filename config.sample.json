@@ -1,5 +1,6 @@
 {
     "PODCAST_ID": "3e51070",
     "EPISODE_ID": "e5f332f1-a347-40d9-a79b-ce30884057e5",
-    "SPOTIFY_URL": "https://open.spotify.com/show/6HTZdaDHjqXKDE4acYffoD?si=EVfDYETjQCu7pasVG5D73Q"
+    "SPOTIFY_SHOW_URL": "https://open.spotify.com/show/6HTZdaDHjqXKDE4acYffoD?si=EVfDYETjQCu7pasVG5D73Q",
+    "SPOTIFY_EPISODE_URL": "https://open.spotify.com/episode/2ehWhMLPR923YhlLMSR4et?si=J5C7ofZ2S9KU3Iv1tqIagQ"
 }
