@@ -19,7 +19,7 @@ function run(config) {
 
 function handleDashboard(config) {
   const { PODCAST_ID, EPISODE_ID, SPOTIFY_SHOW_URL } = config;
-  var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&episode=${EPISODE_ID}&spotify_show_url=${SPOTIFY_SHOW_URL}&dev=true`;
+  var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&episode=${EPISODE_ID}&spotify_url=${SPOTIFY_SHOW_URL}&dev=true`;
   var container = $("#app-content > div > div > div");
   var bannerHtml = $("<div class='anchor-placeholder-banner'></div>");
 
@@ -45,7 +45,7 @@ function handleEpisodePage(config) {
   const { PODCAST_ID, EPISODE_ID, SPOTIFY_EPISODE_URL } = config;
   var url = `https://public-api.wordpress.com/wpcom/v2/anchor?podcast=${PODCAST_ID}&episode=${EPISODE_ID}&dev=true`;
   if (SPOTIFY_EPISODE_URL) {
-    url += `&spotify_show_url=${encodeURIComponent(SPOTIFY_EPISODE_URL)}`;
+    url += `&spotify_url=${encodeURIComponent(SPOTIFY_EPISODE_URL)}`;
   }
   var buttonRow = $(
     "#app-content > div > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)"
